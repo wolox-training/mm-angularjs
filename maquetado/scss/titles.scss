@@ -1,3 +1,25 @@
+.titles {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 25px 0 0 100px;
+}
+
 .text-title {
+  position: relative;
   font-size: 24px;
+  padding: 40px 0 0 50px;
+  z-index: 1;
+}
+
+.text-title:before {
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 0;
+  background: url(assets/triangle.svg);
+  background-repeat: no-repeat;
+  height: 90px;
+  width: 100px;
+  z-index: -1;
 }
