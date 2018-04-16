@@ -1,50 +1,45 @@
+@import '_colors';
+
 .technologies {
+  position: relative;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-content: flex-start;
+  align-items: flex-start;
   flex-wrap: wrap;
-  margin: 50px 0 0 210px;
-  
+  margin: 50px 0 0 75px; 
 }
 
 .tech {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  
-}
-
-.outer-box {
-  position: relative;
-  border: 1px solid #BED23C;
-  border-radius: 5px;
-  height: 260px;
-  width: 180px;
-}
-
-.tech-box {
-  position: relative;
-  display: flex;
-  flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: #BED23C;
+  background-color: $green;
   border-radius: 5px;
-  height: 260px;
-  width: 180px;
-  bottom: 250px;
-  left: 10px;
+  //margin: 30px 40px 0 0;
+  height: 300px;
+  width: 200px;
   padding: 0 15px 20px 5px;
+}
+
+.tech::before {
+  position: absolute;
+  content: "";
+  border: 1px solid $green;
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+  top: -10px;
+  left: -10px;
 }
 
 .tech-logo {
   height: 100px;
-  width: 100px;
 }
 
-.tech-name, .tech-release, .tech-info {
+.tech-name, 
+.tech-release,
+.tech-info {
   font-family: 'Roboto', sans-serif;
   text-align: center;
 }
