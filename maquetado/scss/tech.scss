@@ -1,0 +1,62 @@
+.technologies {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  margin: 50px 0 0 210px;
+  
+}
+
+.tech {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
+}
+
+.outer-box {
+  position: relative;
+  border: 1px solid #BED23C;
+  border-radius: 5px;
+  height: 260px;
+  width: 180px;
+}
+
+.tech-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #BED23C;
+  border-radius: 5px;
+  height: 260px;
+  width: 180px;
+  bottom: 250px;
+  left: 10px;
+  padding: 0 15px 20px 5px;
+}
+
+.tech-logo {
+  height: 100px;
+  width: 100px;
+}
+
+.tech-name, .tech-release, .tech-info {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.tech-name {
+  font-size: 16px;
+}
+
+.tech-release {
+  font-size: 14px;
+}
+
+.tech-info {
+  font-size: 14px;
+}
