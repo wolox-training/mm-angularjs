@@ -1,19 +1,20 @@
 .title {
   position: relative;
   font-size: 24px;
-  padding: 0 0 0 60px;
-  max-width: 1220px;
-  margin: 0 auto;
+  padding: 40px 0 40px 60px;
+  justify-content: left;
+  margin-bottom: 40px;
 }
 
 .title::before {
   position: absolute;
   content: "";
-  top: -40px;
+  top: 50%;
   left: 10px;
   background: url(assets/triangle.svg);
   background-repeat: no-repeat;
   height: 90px;
-  width: 100px;
+  width: 70px;
   z-index: -1;
+  transform: translateY(-50%);
 }
