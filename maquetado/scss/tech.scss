@@ -1,6 +1,9 @@
 .technologies {
   position: relative;
-  padding: 70px 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
 }
 
 .tech {
@@ -12,6 +15,7 @@
   border-radius: 5px;
   width: 200px;
   padding: 25px 15px;
+  margin: 20px;
 }
 
 .tech::before {
@@ -24,6 +28,12 @@
   top: -10px;
   left: -10px;
   z-index: -1;
+  transition: top 0.4s, left 0.4s;
+}
+
+.tech:hover::before {
+  top: 10px;
+  left: 10px;
 }
 
 .tech-logo {
