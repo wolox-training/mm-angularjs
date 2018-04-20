@@ -1,8 +1,8 @@
 .navbar {
   position: fixed;
   display: flex;
-  background-color: white;
-  border-bottom: solid 3px $gray;
+  background-color: $white;
+  box-shadow: 10px -5px 20px 10px $gray;
   justify-content: center;
   align-items: center;
   z-index: 1;
