@@ -1,0 +1,41 @@
+.footer {
+    background-color: $blue;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 0 10px 0;
+    margin: 65px 0 0 0;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 40px;
+  }
+
+  .footer-legend,
+  .footer-cr {
+    color: $white;
+  }
+  
+  .footer-legend {
+    position: relative;
+    font-size: 24px;
+    width: 100%;
+    top: 20px;
+    text-align: center;
+  }
+  
+  .footer-logo {
+    padding: 30px 15px 0 0;
+  }
+  
+  .footer-cr {
+    font-size: 12px;
+    width: 100%;
+    text-align: end;
+    white-space: nowrap;
+    padding: 20px 0 0 0;
+  }
+  
