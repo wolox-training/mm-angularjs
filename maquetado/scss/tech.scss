@@ -5,7 +5,7 @@
   grid-template-columns: repeat(3, max-content);
   margin-bottom: 25px;
 
-  & > :first-child {
+  .tech:first-child {
     border-right: solid 2px $green;
     justify-content: center;
     padding-right: 40px;
