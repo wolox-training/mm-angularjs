@@ -34,3 +34,9 @@
   font-size: 12px;
   align-self: flex-end;
 }
+
+@media only screen and (max-width: 1024px) {
+  .footer-cr {
+    align-self: center;
+  }
+}
