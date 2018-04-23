@@ -55,12 +55,12 @@
     grid-template-columns: 1fr;
     margin: 0 auto 40px;
 
-    .tech:first-child{
+    .tech:first-child {
       border-right: none;
       padding-right: 0;
     }
 
-    .tech:not(:first-child){
+    .tech:not(:first-child) {
       border-top: solid 2px $green;
     }
   }
