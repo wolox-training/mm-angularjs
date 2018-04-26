@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import './scss/index.scss';
 import registerServiceWorker from './registerServiceWorker';
+import Game from './app/screens/Game';
 
-import App from '~components/App'; // eslint-disable-line import/first
+class App extends Component {
+  render() {
+    return <Game />;
+  }
+}
 
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
