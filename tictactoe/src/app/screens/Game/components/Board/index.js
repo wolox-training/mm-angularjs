@@ -1,6 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 
 import Square from './../Square/';
 import style from './styles.scss';
@@ -26,26 +24,31 @@ function calculateWinner(squares) {
 }
 
 class Board extends Component {
+  state = {
+    squares: Array(9).fill(null),
+    xIsNext: true
+  };
+
   handleClick(i) {
-    if (calculateWinner(this.props.squares) || this.props.squares[i]) {
+    const squares = this.state.squares.slice();
+    if (calculateWinner(squares) || squares[i]) {
       return;
     }
-    this.props.dispatch({
-      type: 'CHECK',
-      squares: this.props.squares,
-      xIsNext: this.props.xIsNext,
-      payload: i
+    squares[i] = this.state.xIsNext ? 'X' : 'O';
+    this.setState({
+      squares,
+      xIsNext: !this.state.xIsNext
     });
   }
 
-  renderSquare = i => <Square value={this.props.squares[i]} onClick={() => this.handleClick(i)} />;
+  renderSquare = i => <Square value={this.state.squares[i]} onClick={() => this.handleClick(i)} />;
   render() {
-    const winner = calculateWinner(this.props.squares);
+    const winner = calculateWinner(this.state.squares);
     let status;
     if (winner) {
       status = `Winner: ${winner}`;
     } else {
-      status = `Next player: ${this.props.xIsNext ? 'X' : 'O'}`;
+      status = `Next player: ${this.state.xIsNext ? 'X' : 'O'}`;
     }
 
     return (
@@ -71,14 +74,4 @@ class Board extends Component {
   }
 }
 
-Board.propTypes = {
-  squares: PropTypes.arrayOf(),
-  xIsNext: PropTypes.bool
-};
-
-const mapStateToProps = state => ({
-  squares: state.plays.squares,
-  xIsNext: state.plays.xIsNext
-});
-
-export default connect(mapStateToProps)(Board);
+export default Board;
