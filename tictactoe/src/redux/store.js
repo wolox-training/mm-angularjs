@@ -1,6 +1,7 @@
 import { combineReducers, createStore } from 'redux';
 
-import { checkedSquare, thereIsAWinner } from './plays/reducer';
+import { checkedSquare } from './plays/reducer';
+import { thereIsAWinner } from './winner/reducer';
 
 /* eslint-disable no-underscore-dangle */
 const store = createStore(

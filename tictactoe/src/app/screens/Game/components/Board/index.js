@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 
 import Square from './../Square/';
 import style from './styles.scss';
-import { checkSquare, thereIsAWinner } from './../../../../../redux/plays/actions';
+import { checkSquare } from './../../../../../redux/plays/actions';
+import { thereIsAWinner } from './../../../../../redux/winner/actions';
 
 class Board extends Component {
   handleClick = i => {
