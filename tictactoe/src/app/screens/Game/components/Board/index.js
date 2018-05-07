@@ -4,46 +4,23 @@ import { connect } from 'react-redux';
 
 import Square from './../Square/';
 import style from './styles.scss';
-
-function calculateWinner(squares) {
-  const lines = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6],
-  ];
-  for (let i = 0; i < lines.length; i += 1) {
-    const [a, b, c] = lines[i];
-    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return squares[a];
-    }
-  }
-  return null;
-}
+import { checkSquare, thereIsAWinner } from './../../../../../redux/plays/actions';
 
 class Board extends Component {
-  handleClick(i) {
-    if (calculateWinner(this.props.squares) || this.props.squares[i]) {
+  handleClick = i => {
+    if (this.props.winner !== null) {
       return;
     }
-    this.props.dispatch({
-      type: 'CHECK',
-      squares: this.props.squares,
-      xIsNext: this.props.xIsNext,
-      payload: i
-    });
-  }
+    this.props.dispatch(checkSquare(i));
+  };
 
   renderSquare = i => <Square value={this.props.squares[i]} onClick={() => this.handleClick(i)} />;
   render() {
-    const winner = calculateWinner(this.props.squares);
+    this.props.dispatch(thereIsAWinner(this.props.squares));
+
     let status;
-    if (winner) {
-      status = `Winner: ${winner}`;
+    if (this.props.winner !== null) {
+      status = `Winner: ${this.props.winner}`;
     } else {
       status = `Next player: ${this.props.xIsNext ? 'X' : 'O'}`;
     }
@@ -72,13 +49,15 @@ class Board extends Component {
 }
 
 Board.propTypes = {
-  squares: PropTypes.arrayOf(),
-  xIsNext: PropTypes.bool
+  squares: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.number })),
+  xIsNext: PropTypes.bool,
+  winner: PropTypes.string
 };
 
 const mapStateToProps = state => ({
-  squares: state.plays.squares,
-  xIsNext: state.plays.xIsNext
+  squares: state.checkedSquare.squares,
+  xIsNext: state.checkedSquare.xIsNext,
+  winner: state.thereIsAWinner.winner
 });
 
 export default connect(mapStateToProps)(Board);
