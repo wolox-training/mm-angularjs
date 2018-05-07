@@ -1,12 +1,30 @@
 import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import Square from './../Square/';
 import style from './styles.scss';
+import { checkSquare } from './../../../../../redux/plays/actions';
+import { thereIsAWinner } from './../../../../../redux/winner/actions';
 
 class Board extends Component {
-  renderSquare = i => <Square />;
+  handleClick = i => {
+    if (this.props.winner !== null) {
+      return;
+    }
+    this.props.dispatch(checkSquare(i));
+  };
+
+  renderSquare = i => <Square value={this.props.squares[i]} onClick={() => this.handleClick(i)} />;
   render() {
-    const status = 'Next player: X';
+    this.props.dispatch(thereIsAWinner(this.props.squares));
+
+    let status;
+    if (this.props.winner !== null) {
+      status = `Winner: ${this.props.winner}`;
+    } else {
+      status = `Next player: ${this.props.xIsNext ? 'X' : 'O'}`;
+    }
 
     return (
       <Fragment>
@@ -31,4 +49,16 @@ class Board extends Component {
   }
 }
 
-export default Board;
+Board.propTypes = {
+  squares: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.number })),
+  xIsNext: PropTypes.bool,
+  winner: PropTypes.string
+};
+
+const mapStateToProps = state => ({
+  squares: state.checkedSquare.squares,
+  xIsNext: state.checkedSquare.xIsNext,
+  winner: state.thereIsAWinner.winner
+});
+
+export default connect(mapStateToProps)(Board);
