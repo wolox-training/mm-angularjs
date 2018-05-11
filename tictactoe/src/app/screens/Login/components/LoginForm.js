@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
 
+import renderField from './../../../components/renderField';
+import { LOGIN, EMAIL, PASSWORD } from './../../../../constants/constants';
+
 const validate = values => {
   const errors = {};
   if (!values.email) {
@@ -17,40 +20,17 @@ const validate = values => {
   return errors;
 };
 
-const warn = values => {
-  const warnings = {};
-
-  return warnings;
-};
-
-const renderField = ({ input, label, type, meta: { touched, error, warning } }) => (
-  <div>
-    <label>{label}</label>
-    <div>
-      <input {...input} placeholder={label} type={type} />
-      {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
-    </div>
-  </div>
-);
-
 const LoginForm = props => {
   const { handleSubmit, submitting } = props;
   return (
     <form onSubmit={handleSubmit}>
-      <Field name="email" type="email" component={renderField} label="Email" />
-      <Field name="password" type="text" component={renderField} label="Password" />
+      <Field name={EMAIL} type="email" component={renderField} label="Email" />
+      <Field name={PASSWORD} type="text" component={renderField} label="Password" />
       <button type="submit" disabled={submitting}>
         Submit
       </button>
     </form>
   );
-};
-
-renderField.propTypes = {
-  input: PropTypes.object, // Check type
-  label: PropTypes.string.isRequired,
-  type: PropTypes.string,
-  meta: PropTypes.object
 };
 
 LoginForm.propTypes = {
@@ -59,7 +39,6 @@ LoginForm.propTypes = {
 };
 
 export default reduxForm({
-  form: 'login',
-  validate,
-  warn
+  form: LOGIN,
+  validate
 })(LoginForm);
