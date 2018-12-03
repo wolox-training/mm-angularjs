@@ -1,1 +1,1 @@
-# mm-react
+# mm-angularjs
