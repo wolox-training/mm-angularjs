@@ -1,0 +1,30 @@
+.color-manatee {
+  color: $manatee;
+}
+
+.color-tundora {
+  color: $tundora;
+}
+
+.font-base {
+  font-size: $font-size-base;
+  line-height: 19px;
+  text-align: start;
+}      
+
+.font-small {
+  font-size: $font-size-small;
+  line-height: 19px;
+}  
+
+.input {
+  background: $wild-sand;
+  height: 40px;
+  max-width: 240px;
+  padding: 5px;
+  width: 100%;
+} 
+
+.weight-bold {
+  font-weight: $weight-bold;
+}

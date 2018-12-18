@@ -1,0 +1,25 @@
+.center(ui-view='main')
+  div.filter-search
+    select.input.color-manatee.right-margin-30(
+      name='filter_type'
+      type="text"
+      ng-options='option.value as option.name for option in dashboardCtrl.bookFilters'
+      ng-model='dashboardCtrl.selectedFilter'
+    )
+      option(value="") {{dashboardCtrl.constants.selectFilter}}
+    div.search
+      input.input(
+        type="text"
+        placeholder='{{dashboardCtrl.selectedFilter ? dashboardCtrl.constants.search : dashboardCtrl.constants.noChosenFilter }}'
+        ng-model="query"
+        ng-disabled='!dashboardCtrl.selectedFilter'
+      )
+      div.search-img(ng-click='appliedFilter = dashboardCtrl.filterBooks(dashboardCtrl.selectedFilter, query)')
+        img(ng-src='../../assets/search.svg')
+  table
+    tbody.wrap-content
+      tr(ng-repeat="book in dashboardCtrl.books | filter: appliedFilter" ) 
+        td.book-info.right-margin-70.bottom-margin-70
+          img.book-cover(ng-src='{{book.image_url || "../../assets/default_book.svg"}}' alt='{{book.title}}')
+          span.font-base.weight-bold.align-start {{book.title}}
+          span.font-small.color-tundora.align-start {{book.author}}

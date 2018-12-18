@@ -1,0 +1,14 @@
+@import 'equalizer';
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700');
+@import 'variables/colors';
+@import 'variables/sizes';
+@import 'variables/weights';
+@import 'base';
+@import './app/layout';
+@import '../app/components/centered/component1/component1';
+@import '../app/components/centered/component2/component2';
+@import '../app/components/dashboard/dashboard';
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
