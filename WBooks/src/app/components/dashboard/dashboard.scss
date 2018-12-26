@@ -1,22 +1,21 @@
 .book-cover {
   background-color: $alto;
-  height: 182px;
+  height: 180px;
   margin-bottom: 10px;
-  width: 128px;
+  width: 130px;
 }
 
 .book-info {
   display: flex;
   flex-direction: column;
-  width: 128px;
+  width: 130px;
 }
 
 .filter-search {
   align-items: center;
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 65px;
-  margin-top: 20px;
+  margin: 65px auto;
 }
 
 .search {

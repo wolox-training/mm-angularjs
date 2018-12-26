@@ -1,5 +1,5 @@
 angular.module(
-  'app-bootstrap', [
+  'w-books', [
     'ui.router',
     'LocalStorageModule',
     'pascalprecht.translate'

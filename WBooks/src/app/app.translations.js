@@ -1,18 +1,8 @@
-angular.module('app-bootstrap').config([
+angular.module('w-books').config([
   '$translateProvider',
   function ($translateProvider) {
 
-    $translateProvider.translations('es', {
-      DAYS_OF_WEEK: {
-        SUNDAY: 'Domingo',
-        MONDAY: 'Lunes',
-        TUESDAY: 'Martes',
-        WEDNESDAY: 'Miércoles',
-        THURSDAY: 'Jueves',
-        FRIDAY: 'Viernes',
-        SATURDAY: 'Sabado'
-      }
-    });
+    $translateProvider.translations('es', {});
     $translateProvider.preferredLanguage('es');
     $translateProvider.useSanitizeValueStrategy(null);
   }

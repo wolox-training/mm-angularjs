@@ -1,10 +1,14 @@
-angular.module('app-bootstrap').config([
+angular.module('w-books').config([
   '$translateProvider',
   function ($translateProvider) {
 
     $translateProvider.translations('es', {
-      DASH: {
-        TITLE: 'Title'
+      DASHBOARD: {
+        SELECT_FILTER: 'Seleccionar filtro',
+        SEARCH: 'Buscar...',
+        NO_CHOSEN_FILTER: 'Por favor, seleccione un filtro',
+        TITLE: 'Titulo',
+        AUTHOR: 'Autor'
       }
     });
   }
