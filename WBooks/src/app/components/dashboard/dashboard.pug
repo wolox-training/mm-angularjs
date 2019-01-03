@@ -4,21 +4,19 @@
       name='filter_type'
       type='text'
       ng-options='option.value as option.name for option in dashboardCtrl.bookFilters'
-      ng-model='dashboardCtrl.selectedFilter'
-    )
+      ng-model='dashboardCtrl.selectedFilter')
       option(value='')
         |  {{ 'DASHBOARD.SELECT_FILTER' | translate }}
     .search
       input.input(
         type='text'
-        placeholder="{{ (dashboardCtrl.selectedFilter ? 'DASHBOARD.SEARCH' : 'DASHBOARD.NO_CHOSEN_FILTER') | translate }}"
+        placeholder='{{ (dashboardCtrl.selectedFilter ? "DASHBOARD.SEARCH" : "DASHBOARD.NO_CHOSEN_FILTER") | translate }}'
         ng-model='query'
-        ng-disabled='!dashboardCtrl.selectedFilter'
-      )
+        ng-disabled='!dashboardCtrl.selectedFilter')
       .search-img(ng-click='appliedFilter = dashboardCtrl.filterBooks(dashboardCtrl.selectedFilter, query)')
-        img(ng-src='../../assets/search.svg')
+        img(ng-src='../../assets/search.svg' alt='{{"DASHBOARD.SEARCH" | translate}}')
   .wrap-content
-    .book-info.right-margin-70.bottom-margin-70(ng-repeat='book in dashboardCtrl.books | filter: appliedFilter' ) 
+    .book-info.right-margin-70.bottom-margin-70(ng-repeat='book in dashboardCtrl.books | filter: appliedFilter') 
       img.book-cover(ng-src='{{book.image_url || "../../assets/default_book.svg"}}' alt='{{book.title}}')
       span.font-base.weight-bold.align-start {{book.title}}
       span.font-small.tundora.align-start {{book.author}}
