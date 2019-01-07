@@ -1,0 +1,33 @@
+.book-cover {
+  background-color: $alto;
+  height: 180px;
+  margin-bottom: 10px;
+  width: 130px;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  width: 130px;
+}
+
+.filter-search {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  margin: 65px auto;
+}
+
+.search {
+  display: flex;
+  width: 240px;
+}
+
+.search-img {
+  align-content: center;
+  background-color: $wolox-green;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  width: 40px;
+}
