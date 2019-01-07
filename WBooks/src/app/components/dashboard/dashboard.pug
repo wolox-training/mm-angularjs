@@ -18,5 +18,7 @@
   .wrap-content
     .book-info.right-margin-70.bottom-margin-70(ng-repeat='book in dashboardCtrl.books | filter: appliedFilter') 
       img.book-cover(ng-src='{{book.image_url || "../../assets/default_book.svg"}}' alt='{{book.title}}')
-      span.font-base.weight-bold.align-start {{book.title}}
-      span.font-small.tundora.align-start {{book.author}}
+      span.font-base.weight-bold.align-start 
+        | {{book.title}}
+      span.font-small.tundora.align-start
+        | {{book.author}}
