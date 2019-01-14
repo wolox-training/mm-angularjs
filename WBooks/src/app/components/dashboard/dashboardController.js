@@ -2,7 +2,7 @@ angular.module('w-books').controller('DashboardController',
   ['booksService', '$translate',
     function (booksService, $translate) {
 
-      booksService.getBookList().then((response) => {
+      booksService.getBooks().then((response) => {
         this.books = response.data;
       });
 

@@ -1,0 +1,66 @@
+.cover-layout {
+  align-items: center;
+  background-color: $alto;
+  display: flex;
+  height: 250px;
+  justify-content: center;
+  margin-right: 20px;
+  width: 190px;
+}
+
+.send-btn {
+  background-color: $atlantis;
+  color: $white;
+  font-size: $font-size-big;
+  font-weight: $weight-bold;
+  height: 40px;
+  width: 190px;
+}
+
+.comment-input {
+  border: 1px solid $dusty-gray;
+  height: 75px;
+  padding: 5px;
+  resize: none;
+  width: 665px;
+}
+
+.comment {
+  max-width: 680px;
+}
+
+.container {
+  width: 800px;
+}
+
+.bottom-line {
+  border-bottom: 1px solid $cerulean;
+}
+
+.details {
+  max-width: 560px;
+}
+
+.placeholder-cover {
+  height: 105px;
+}
+
+.profile-img {
+  border-radius: 100%;
+  height: 40px;
+  width: 40px;
+}
+
+.suggested-book {
+  align-items: center;
+  background: $alto;
+  display: flex;
+  height: 125px;
+  justify-content: center;
+  margin-right: 20px;
+  width: 90px;
+}
+
+.wbooks-logo {
+  width: 170px;
+}

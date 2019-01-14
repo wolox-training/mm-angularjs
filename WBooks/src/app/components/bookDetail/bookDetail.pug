@@ -1,0 +1,42 @@
+.header.mb20
+  img.wbooks-logo.pl30(ng-src='../../assets/wbooks_logo.svg' alt='{{"BOOK_DETAIL.WBOOKS" | translate}}')
+.flex-column.align-items-center
+  a.manatee.pl30.self-align-start.font-small.mb40(ui-sref='dashboard') 
+    | {{ 'BOOK_DETAIL.BACK' | translate }}
+  .container.flex.bottom-line
+    img.cover-layout(ng-src='{{bookDetailCtrl.book.image_url || "../../assets/default_book.svg"}}' alt='{{bookDetailCtrl.book.title}}')
+    .flex-column.details
+      span.font-large.weigth-bold.mb10 {{bookDetailCtrl.book.title}}
+      span.font-big.mb20 {{bookDetailCtrl.book.author}}
+      span.font-big.mb10 {{bookDetailCtrl.book.year}}
+      span.font-big.mb10 {{bookDetailCtrl.book.genre}}
+      span.font-regular.manatee.mb40
+        | {{ 'BOOK_DETAIL.DUMMY' | translate }}
+      button.base-btn.mb40
+        | {{ 'BOOK_DETAIL.RESERVE' | translate }}
+  .container.flex-column.bottom-line.pt30
+    span.font-large.weigth-bold.mb10.atlantis 
+        | {{ 'BOOK_DETAIL.SUGGESTIONS' | translate }}
+    .pl30.flex.mb30
+      img.suggested-book(ng-src='../../assets/default_book.svg' ng-repeat='i in [0,1,2,3]' alt='{{"BOOK_DETAIL.SUGGESTION" | translate}}')
+  .container.flex-column.bottom-line.pt30
+    span.font-large.weigth-bold.mb20.atlantis
+      | {{ 'BOOK_DETAIL.COMMENTS' | translate }}
+    .pl30.flex-column.mb30
+      .flex
+        img.profile-img.mr20(ng-src='../../assets/profile_mock.png' alt='{{"BOOK_DETAIL.PROFILE_IMG" | translate}}')
+        .flex-column
+          span.mb20
+            | {{ 'BOOK_DETAIL.ADD_COMMENT' | translate }}
+          textarea.comment-input.mb20
+          button.send-btn.mb30 Enviar
+            | {{ 'BOOK_DETAIL.SEND' | translate }}
+      .flex(ng-repeat='i in [0,1]')
+        img.profile-img.mr20(ng-src='../../assets/profile_mock.png' alt='{{"BOOK_DETAIL.PROFILE_IMG" | translate}}')
+        .flex-column.comment
+          span.weight-bold
+            | {{ 'BOOK_DETAIL.MOCK_USER' | translate }}
+          span.mb10.dusty-gray.font-small
+            | {{ 'BOOK_DETAIL.DATE_PH' | translate }}
+          span.mb20.manatee
+            | {{ 'BOOK_DETAIL.DUMMY' | translate }}

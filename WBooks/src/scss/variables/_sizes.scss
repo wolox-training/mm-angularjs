@@ -1,2 +1,25 @@
 $font-size-base: 14px;
+$font-size-big: 16px;
+$font-size-large: 20px;
 $font-size-small: 12px;
+
+.font-base {
+  font-size: $font-size-base;
+  line-height: 19px;
+  text-align: start;
+}
+
+.font-big {
+  font-size: $font-size-big;
+  line-height: 19px;
+}
+
+.font-large {
+  font-size: $font-size-large;
+  line-height: 19px;
+}
+
+.font-small {
+  font-size: $font-size-small;
+  line-height: 19px;
+}
