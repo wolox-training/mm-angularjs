@@ -6,17 +6,21 @@
   .container.flex.bottom-line
     img.cover-layout(ng-src='{{bookDetailCtrl.book.image_url || "../../assets/default_book.svg"}}' alt='{{bookDetailCtrl.book.title}}')
     .flex-column.details
-      span.font-large.weigth-bold.mb10 {{bookDetailCtrl.book.title}}
-      span.font-big.mb20 {{bookDetailCtrl.book.author}}
-      span.font-big.mb10 {{bookDetailCtrl.book.year}}
-      span.font-big.mb10 {{bookDetailCtrl.book.genre}}
+      span.font-large.weigth-bold.mb10
+        | {{bookDetailCtrl.book.title}}
+      span.font-big.mb20
+        | {{bookDetailCtrl.book.author}}
+      span.font-big.mb10
+        | {{bookDetailCtrl.book.year}}
+      span.font-big.mb10
+        | {{bookDetailCtrl.book.genre}}
       span.font-regular.manatee.mb40
         | {{ 'BOOK_DETAIL.DUMMY' | translate }}
       button.base-btn.mb40
         | {{ 'BOOK_DETAIL.RESERVE' | translate }}
   .container.flex-column.bottom-line.pt30
     span.font-large.weigth-bold.mb10.atlantis 
-        | {{ 'BOOK_DETAIL.SUGGESTIONS' | translate }}
+      | {{ 'BOOK_DETAIL.SUGGESTIONS' | translate }}
     .pl30.flex.mb30
       img.suggested-book(ng-src='../../assets/default_book.svg' ng-repeat='i in [0,1,2,3]' alt='{{"BOOK_DETAIL.SUGGESTION" | translate}}')
   .container.flex-column.bottom-line.pt30
@@ -29,7 +33,7 @@
           span.mb20
             | {{ 'BOOK_DETAIL.ADD_COMMENT' | translate }}
           textarea.comment-input.mb20
-          button.send-btn.mb30 Enviar
+          button.send-btn.mb30
             | {{ 'BOOK_DETAIL.SEND' | translate }}
       .flex(ng-repeat='i in [0,1]')
         img.profile-img.mr20(ng-src='../../assets/profile_mock.png' alt='{{"BOOK_DETAIL.PROFILE_IMG" | translate}}')

@@ -4,7 +4,6 @@ angular.module('w-books').controller('BookDetailController',
       booksService.getBook($stateParams.bookId).then((response) => {
         this.book = response;
       });
-
     }
   ]
 );
