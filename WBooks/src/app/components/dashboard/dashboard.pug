@@ -17,7 +17,8 @@
         img(ng-src='../../assets/search.svg' alt='{{"DASHBOARD.SEARCH" | translate}}')
   .wrap-content
     .book-info.right-margin-70.bottom-margin-70(ng-repeat='book in dashboardCtrl.books | filter: appliedFilter') 
-      img.book-cover(ng-src='{{book.image_url || "../../assets/default_book.svg"}}' alt='{{book.title}}')
+      a(ui-sref='book({ bookId: book.id })')   
+        img.book-cover(ng-src='{{book.image_url || "../../assets/default_book.svg"}}' alt='{{book.title}}')
       span.font-base.weight-bold.align-start 
         | {{book.title}}
       span.font-small.tundora.align-start

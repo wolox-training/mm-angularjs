@@ -18,6 +18,16 @@ angular.module('w-books').config([
             controllerAs: 'dashboardCtrl'
           }
         }
+      })
+      .state('book', {
+        url: '/book/{bookId}',
+        views: {
+          main: {
+            templateUrl: '../app/components/bookDetail/bookDetail.html',
+            controller: 'BookDetailController',
+            controllerAs: 'bookDetailCtrl'
+          }
+        }
       });
 
     $locationProvider.html5Mode(true);

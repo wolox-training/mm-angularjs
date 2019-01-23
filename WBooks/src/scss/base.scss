@@ -1,9 +1,25 @@
-.manatee {
-  color: $manatee;
+.align-items-center {
+  align-items: center;
 }
 
-.tundora {
-  color: $tundora;
+.atlantis { color: $atlantis; }
+
+.base-btn {
+  background-color: $cerulean;
+  color: $white;
+  font-size: $font-size-large;
+  font-weight: $weight-bold;
+  height: 40px;
+  width: 190px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
 }
 
 .font-base {
@@ -12,9 +28,25 @@
   text-align: start;
 }
 
+.font-big {
+  font-size: $font-size-big;
+  line-height: 19px;
+}
+
+.font-large {
+  font-size: $font-size-large;
+  line-height: 19px;
+}
+
 .font-small {
   font-size: $font-size-small;
   line-height: 19px;
+}
+
+.header {
+  box-shadow: 0 2px 10px $diffuse-tundora;
+  padding: 20px 10px;
+  width: 100%;
 }
 
 .input {
@@ -25,6 +57,23 @@
   width: 100%;
 }
 
-.weight-bold {
-  font-weight: $weight-bold;
+.manatee { color: $manatee; }
+
+.mr20 { margin-right: 20px; }
+
+.mb10 { margin-bottom: 10px; }
+.mb20 { margin-bottom: 20px; }
+.mb30 { margin-bottom: 30px; }
+.mb40 { margin-bottom: 40px; }
+
+.pl30 { padding-left: 30px; }
+
+.pt30 { padding-top: 30px; }
+
+.self-align-start {
+  align-self: flex-start;
 }
+
+.tundora { color: $tundora; }
+
+.weight-bold { font-weight: $weight-bold; }
