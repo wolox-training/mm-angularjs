@@ -5,15 +5,7 @@ import { Provider } from 'react-redux';
 import './scss/index.scss';
 import registerServiceWorker from './registerServiceWorker';
 import store from './redux/store';
-import Game from './app/screens/Game';
+import routes from './constants/routes';
 
-function App() {
-  return (
-    <Provider store={store}>
-      <Game />
-    </Provider>
-  );
-}
-
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Provider store={store}>{routes}</Provider>, document.getElementById('root'));
 registerServiceWorker();
